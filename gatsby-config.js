@@ -6,8 +6,8 @@ module.exports = {
     { 
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: CONTENTFUL_SPACEID,
-        accessToken: CONTENTFUL_ACCESSTOKEN
+        spaceId: process.env.CONTENTFUL_SPACEID || '',
+        accessToken: process.env.CONTENTFUL_ACCESSTOKEN || ''
       }
      },
     'gatsby-plugin-react-helmet',
