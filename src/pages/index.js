@@ -1,15 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import BlogPostCard from '../components/global/blogPostCard'
 
-const BlogPost = ({node}) => {
-  return (
-    <li>
-      <Link to={node.slug}><h3>{node.title}</h3></Link>
-      <img src={node.featuredImage.responsiveResolution.src} />
-      <div>{node.post.childMarkdownRemark.excerpt}</div>
-    </li>
-  )
-}
 const IndexPage = ({data}) => (
   <ul className='blog-post'>
     {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
