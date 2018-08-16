@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+function fancyAnimation(event) {
+    console.log(event)
+}
+
+function fancyAnimationLeave(event) {
+    console.log(event)
+}
+
+
 const AuthorCard = (props) => (
     <div className="author">
-        <div className="img-wrapper">
+        <div className="img-wrapper" onMouseEnter={fancyAnimation} onMouseLeave={fancyAnimationLeave}>
             <img src={props.avatar} />
         </div>
 
