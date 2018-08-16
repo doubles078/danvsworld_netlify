@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import AuthorContainer from '../components/blog-post/authorContainer';
+import AuthorCard from '../components/postpage/authorCard';
+import PostContent from '../components/postpage/postContent';
 
 class BlogPost extends Component {
     render() {
-        const { title, post, author } = this.props.data.contentfulBlog
+        const { title, post, author, publishDate } = this.props.data.contentfulBlog
 
         return (
             <div className="blog-post-container">
-                <AuthorContainer name={author.name} avatar={author.avatar.responsiveResolution.src} />     
-                <main>
-                    <h1>{title}</h1>
-                    <div dangerouslySetInnerHTML={{__html: post.childMarkdownRemark.html}} />
-                </main>
+                <AuthorCard 
+                    avatar={author.avatar.responsiveResolution.src} 
+                    description={author.description.childMarkdownRemark.html}
+                    name={author.name} 
+                />  
+                
+                <PostContent 
+                    content={post.childMarkdownRemark.html}
+                    date={publishDate}
+                    title={title}
+                    twitter={author.twitterLink}
+                />   
             </div>
         )
      }
@@ -30,6 +38,7 @@ export const pageQuery = graphql`
         contentfulBlog(slug: {eq: $slug}) {
             title
             slug
+            publishDate(formatString: "DD MMMM YYYY")
             post {
                 childMarkdownRemark {
                   html
@@ -37,6 +46,12 @@ export const pageQuery = graphql`
             }
             author {
                 name
+                twitterLink
+                description {
+                    childMarkdownRemark {
+                      html
+                    }
+                  }
                 avatar {
                   responsiveResolution(cropFocus: TOP) {
                     src

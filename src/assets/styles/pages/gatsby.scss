@@ -40,13 +40,18 @@ html {
     display: none;
   }
   a {
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
-  }
-  a:active,
-  a:hover {
-    outline-width: 0;
-  }
+    color: $link-color;
+    font-family: sans-serif;
+    padding: 10px 0px 0px 0px;
+
+    
+    &:focus, &:active {
+        color: $link-color;
+        border: dotted 5px;
+        padding: 3px 0px 0px 0px;
+        ;
+    }
+}
   abbr[title] {
     border-bottom: none;
     text-decoration: underline;
