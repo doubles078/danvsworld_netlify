@@ -1,0 +1,15 @@
+.blog-post-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/** ALL MEDIA QUERIES GO BELOW HERE **/
+@media (min-width: 768px) {
+    .blog-post-container {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+  }
+  

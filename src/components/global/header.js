@@ -1,29 +1,12 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: '#049372',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
+const Header = () => (
+  <header className='header'>
+    <div className='wrapper'>
+      <h1>
+        <Link to="/">
+          Gatsby
         </Link>
       </h1>
     </div>
