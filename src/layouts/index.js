@@ -16,14 +16,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: '66em',
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
+    <div className="global-container">
       {children()}
     </div>
   </div>

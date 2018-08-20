@@ -47,9 +47,8 @@ html {
     
     &:focus, &:active {
         color: $link-color;
-        border: dotted 5px;
+        border: dotted 5px $link-color;
         padding: 3px 0px 0px 0px;
-        ;
     }
 }
   abbr[title] {
@@ -390,7 +389,7 @@ html {
     padding-right: 0;
     padding-top: 0;
     margin-bottom: 1.45rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 1.5;
   }
   figure {

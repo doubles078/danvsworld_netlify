@@ -6,16 +6,36 @@ import Link from 'gatsby-link';
 const BlogPostCard = ({node}) => {
     return (
       <li>
-        <Link to={node.slug}><h3>{node.title}</h3></Link>
-        <img src={node.featuredImage.responsiveResolution.src} />
-        <div>{node.post.childMarkdownRemark.excerpt}</div>
+        <img src={node.author.avatar.responsiveResolution.src} />
+        <div className="post-list-card">
+          <h1>
+            <Link to={node.slug}>
+              {node.title}
+            </Link>
+          </h1>
+          
+          <a href={node.author.twitterLink} className="post-list-card-meta">
+            {node.author.nickname} &bull; {node.publishDate}
+          </a>
+          
+          <ul>
+            <li>
+              #marketingautomation
+            </li>
+            <li>
+              #html
+            </li>
+            <li>
+              #yomama
+            </li>
+          </ul>
+        </div>
       </li>
     )
   }
 
 BlogPostCard.propTypes = {
-    name: PropTypes.string.isRequired,
-    avatar: PropTypes.string
+    node: PropTypes.object.isRequired
 }
 
 export default BlogPostCard

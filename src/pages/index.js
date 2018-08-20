@@ -2,9 +2,22 @@ import React from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 
 const IndexPage = ({data}) => (
-  <ul className='blog-post'>
-    {data.allContentfulBlog.edges.map((edge) => <BlogPostCard node={edge.node} />)}
-  </ul>
+  <div className="home-container">
+      <div>
+        Left Nav Bar
+      </div>
+
+      <main>
+        <ul className='blog-posts'>
+          {data.allContentfulBlog.edges.map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
+        </ul>
+      </main>
+
+      <div>
+        Right Nav Bar
+      </div>
+
+  </div>
 )
 
 export default IndexPage
@@ -17,16 +30,23 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          author {
+            name
+            nickname
+            avatar {
+              responsiveResolution(cropFocus: TOP, width: 50, height: 50) {
+                src
+              }
+            }
+            twitterLink
+          }
           featuredImage {
-            responsiveResolution (width: 300, height:300) {
+            responsiveResolution {
               src
             }
           }
-          post {
-            childMarkdownRemark {
-              excerpt
-            }
-          } 
+          id
+          publishDate(formatString: "DD MMMM YYYY")
           slug
           title
         }

@@ -5,7 +5,7 @@ import PostContent from '../components/postpage/postContent';
 
 class BlogPost extends Component {
     render() {
-        const { title, post, author, publishDate } = this.props.data.contentfulBlog
+        const { title, post, author, quickSummary, publishDate } = this.props.data.contentfulBlog
 
         return (
             <div className="blog-post-container">
@@ -14,12 +14,14 @@ class BlogPost extends Component {
                     description={author.description.childMarkdownRemark.html}
                     name={author.name} 
                 />  
-                
+
                 <PostContent 
                     content={post.childMarkdownRemark.html}
                     date={publishDate}
+                    summary={quickSummary}
                     title={title}
                     twitter={author.twitterLink}
+                    wordcount={post.childMarkdownRemark.wordCount.words}
                 />   
             </div>
         )
@@ -36,14 +38,6 @@ export default BlogPost
 export const pageQuery = graphql`
     query blogPostQuery($slug: String!){
         contentfulBlog(slug: {eq: $slug}) {
-            title
-            slug
-            publishDate(formatString: "DD MMMM YYYY")
-            post {
-                childMarkdownRemark {
-                  html
-                }
-            }
             author {
                 name
                 twitterLink
@@ -57,7 +51,19 @@ export const pageQuery = graphql`
                     src
                   }
                 }
-              }
+            }
+            post {
+                childMarkdownRemark {
+                  html
+                  wordCount {
+                    words
+                  }
+                }
+            }
+            publishDate(formatString: "DD MMMM YYYY")
+            quickSummary
+            slug
+            title
         }
     }
 `

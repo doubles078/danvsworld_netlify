@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import PostMeta from './postMeta';
 
 const PostContent = (props) => (
     <main className="content">
@@ -14,15 +14,24 @@ const PostContent = (props) => (
 
         <h1>{props.title}</h1>
 
+        <PostMeta
+            summary={props.summary}
+            wordcount={props.wordcount}
+        />
+
         <div dangerouslySetInnerHTML={{__html: props.content}} />
     </main>
 )
 
 
 PostContent.propTypes = {
-    name: PropTypes.string.isRequired,
     avatar: PropTypes.string,
-    description: PropTypes.string
+    content: PropTypes.html,
+    description: PropTypes.string,
+    name: PropTypes.string,
+    summary: PropTypes.string,
+    title: PropTypes.string,
+    twitter: PropTypes.string
 }
 
 export default PostContent
