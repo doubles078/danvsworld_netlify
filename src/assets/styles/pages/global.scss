@@ -3,6 +3,43 @@
     max-width: 66em;
     padding: 0px 1.0875rem 1.45rem;
     padding-top: 0;
+
+    .taglist-card {
+        border: 2px solid $light-gray;
+        border-radius: $cards-border-radius;
+        height: 400px;
+
+        h3 {
+            font-weight: normal;
+            margin: 0;
+            padding: 1rem;
+        }
+        div {
+            overflow-y: scroll;
+            height: 325px;
+
+            ul {
+                margin: 0;
+                padding-left: 1rem;
+    
+                li {
+                    font-size: 0.9rem;
+                    list-style: none;
+                    margin-bottom: 0.5rem;
+                    
+                    a {
+                        color: $main-font;
+                        text-decoration: none;
+                        
+                        &:hover {
+                            color: $link-color;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
 }
 
 .header {
@@ -11,7 +48,7 @@
 
     .wrapper {
         margin: 0 auto;
-        max-width: 66em;
+        max-width: 66rem;
         padding: 1.45rem 1.0875rem;
 
         h1 {

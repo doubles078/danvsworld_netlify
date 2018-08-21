@@ -2,7 +2,8 @@ import React from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 import TagsList from '../components/global/tagsList';
 
-const IndexPage = ({data}) => (
+
+const HomepageTag = ({data}) => (
   <div className="home-container">
       <TagsList 
         blogposts={data.allContentfulBlog.edges}
@@ -21,10 +22,10 @@ const IndexPage = ({data}) => (
   </div>
 )
 
-export default IndexPage
+export default HomepageTag
 
 export const pageQuery = graphql`
-  query SiteTitleQuery {
+  query HomePageTag {
     allContentfulBlog ( 
       filter: { node_locale: {eq: "en-US"} },
       sort: { fields: [publishDate], order: DESC }

@@ -4,6 +4,11 @@ import Link from 'gatsby-link';
 
 
 const BlogPostCard = ({node}) => {
+
+  function removeSpaceAndLowerCase(tag) {
+    return tag.toLowerCase().replace(/\s/g, '');
+  }
+
     return (
       <li>
         <img src={node.author.avatar.responsiveResolution.src} />
@@ -14,20 +19,12 @@ const BlogPostCard = ({node}) => {
             </Link>
           </h1>
           
-          <a href={node.author.twitterLink} className="post-list-card-meta">
+          <a href={node.author.twitterLink} className="post-list-card-meta"  target="_blank">
             {node.author.nickname} &bull; {node.publishDate}
           </a>
           
           <ul>
-            <li>
-              #marketingautomation
-            </li>
-            <li>
-              #html
-            </li>
-            <li>
-              #yomama
-            </li>
+              {node.tags.map((tag) => <li key={tag}>#{removeSpaceAndLowerCase(tag)}</li>)}
           </ul>
         </div>
       </li>

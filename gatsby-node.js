@@ -2,9 +2,15 @@ const path = require('path')
 
 exports.createPages = ({graphql, boundActionCreators}) => {
   const {createPage} = boundActionCreators;
+ 
+  function removeSpaceAndLowerCase(tag) {
+    return tag.toLowerCase().replace(/\s/g, '');
+  }
 
   return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve('src/templates/blog-post.js')
+    const blogPostTemplate = path.resolve('src/templates/blog-post.js');
+    const homepageTagTemplate = path.resolve('src/templates/homepage-tag.js');
+
     resolve(
       graphql(`
         {
@@ -13,6 +19,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
               node {
                 id
                 slug
+                tags
               }
             }
           }
@@ -29,7 +36,18 @@ exports.createPages = ({graphql, boundActionCreators}) => {
               slug: edge.node.slug
             }
           })
+
+          edge.node.tags.forEach((tag) => {
+            createPage ({
+              path: removeSpaceAndLowerCase(tag),
+              component: homepageTagTemplate,
+              context: {
+                slug: removeSpaceAndLowerCase(tag)
+              }
+            })
+          })
         })
+
         return
       })
     )

@@ -12,7 +12,7 @@
         li {
             background: #fff;
             border: 1px solid #eee;
-            border-radius: 3px;
+            border-radius: $cards-border-radius;
             box-shadow: 0 0 6px #eee;
             box-sizing: border-box;
             display: flex;
@@ -56,11 +56,11 @@
 
             .post-list-card {
                 margin-left: 1rem;
-                overflow: hidden;
             }
 
             ul {
                 display: flex;
+                flex-wrap: wrap;
                 margin: 0;
 
                 li {
