@@ -14,7 +14,6 @@ class BlogPost extends Component {
                     description={author.description.childMarkdownRemark.html}
                     name={author.name} 
                 />  
-
                 <PostContent 
                     content={post.childMarkdownRemark.html}
                     date={publishDate}

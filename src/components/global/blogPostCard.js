@@ -10,22 +10,24 @@ const BlogPostCard = ({node}) => {
   }
 
     return (
-      <li>
-        <img src={node.author.avatar.responsiveResolution.src} />
-        <div className="post-list-card">
-          <h1>
-            <Link to={node.slug}>
-              {node.title}
-            </Link>
-          </h1>
-          
-          <a href={node.author.twitterLink} className="post-list-card-meta"  target="_blank">
-            {node.author.nickname} &bull; {node.publishDate}
-          </a>
-          
-          <ul>
-              {node.tags.map((tag) => <li key={tag}>#{removeSpaceAndLowerCase(tag)}</li>)}
-          </ul>
+      <li className="post-list-card">
+        <div className="post-list-card-details">
+          <img src={node.author.avatar.responsiveResolution.src} className="post-list-avatar"/>
+          <div className="post-list-card-meta">
+            <h1>
+              <Link to={node.slug}>
+                {node.title}
+              </Link>
+            </h1>
+            
+            <a href={node.author.twitterLink} target="_blank">
+              {node.author.nickname} &bull; {node.publishDate}
+            </a>
+            
+            <ul>
+                {node.tags.map((tag) => <li key={tag}>#{removeSpaceAndLowerCase(tag)}</li>)}
+            </ul>
+          </div>
         </div>
       </li>
     )

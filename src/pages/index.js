@@ -1,25 +1,37 @@
 import React from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
+import FeaturedPostCard from '../components/global/featuredPostCard';
 import TagsList from '../components/global/tagsList';
 
-const IndexPage = ({data}) => (
-  <div className="home-container">
+const IndexPage = ({data}) => {
+
+let allBlogPosts = data.allContentfulBlog.edges;
+let blogsWithoutLatestPost = allBlogPosts.slice(1,allBlogPosts.length);
+let featuredPost = allBlogPosts[0];
+
+
+return (
+    <div className="home-container">
       <TagsList 
-        blogposts={data.allContentfulBlog.edges}
+        blogposts={allBlogPosts}
       />
 
       <main>
+
         <ul className='blog-posts'>
-          {data.allContentfulBlog.edges.map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
+          <FeaturedPostCard node={featuredPost.node} />
+
+          {blogsWithoutLatestPost.map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
         </ul>
       </main>
 
       <div>
         Right Nav Bar
       </div>
+    </div>
+)}
 
-  </div>
-)
+
 
 export default IndexPage
 

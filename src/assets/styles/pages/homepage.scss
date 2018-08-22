@@ -16,7 +16,8 @@
             box-shadow: 0 0 6px #eee;
             box-sizing: border-box;
             display: flex;
-            padding: 1rem;
+            flex-direction: row;
+            flex-wrap: wrap;
             vertical-align: top;
             width: 100%;
             
@@ -36,26 +37,25 @@
                     color: $main-font;
                 }
             }
+            .post-list-card-details {
+                display: flex;
+                padding: 1rem;
 
-            img {
-                border-radius: 30px;
-                height: 50px;
-                margin: 0;
-                width: 50px;
+                .post-list-avatar {
+                    border-radius: 30px;
+                    height: 50px;
+                    margin: 0;
+                    width: 50px;
+                }
+                
+                .post-list-card-meta {
+                    margin-left: 1rem;
+                }
             }
-    
-            p {
-                color: #8c8c8c;
-                font-family: Open Sans, sans-serif;
-                font-size: .9em;                
-                font-weight: 300;
-                line-height: 1.5em;
-                margin: 0.6em 0 1.3em;
-                text-align: left!important;
-            }
+            
 
-            .post-list-card {
-                margin-left: 1rem;
+            .post-list-featured-image {
+                flex: 0 1 100%;
             }
 
             ul {
@@ -105,6 +105,10 @@
 
                 .post-list-card-meta {
                     font-size: 0.9em;
+                }
+
+                .post-list-featured-image {
+                    display: none;
                 }
             }
         }

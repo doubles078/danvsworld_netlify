@@ -3,6 +3,15 @@ import BlogPostCard from '../components/global/blogPostCard';
 import TagsList from '../components/global/tagsList';
 
 
+function generatePageTagContext() {
+    //This is bad and should be updated later
+    let tagName = window.location.pathname;
+
+    console.log(tagName)
+}
+
+
+
 const HomepageTag = ({data}) => (
   <div className="home-container">
       <TagsList 
@@ -14,6 +23,7 @@ const HomepageTag = ({data}) => (
           {data.allContentfulBlog.edges.map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
         </ul>
       </main>
+      {generatePageTagContext()}
 
       <div>
         Right Nav Bar
