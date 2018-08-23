@@ -11,6 +11,8 @@ const TagsList = (props) => {
     
     function createUniqueTagsFromList(list, emptyarray) {
         list.forEach(function(item) {
+            item = removeSpaceAndLowerCase(item)
+
             if(emptyarray.indexOf(item) < 0) {
                 emptyarray.push(item);
             }
@@ -32,11 +34,11 @@ const TagsList = (props) => {
                 Categories
             </h3>
             <div>
-                <ul>
+                <ul className="taglist-scrollbox">
                     {uniqueTags.map((tag) => (
                         <li key={tag}>
-                            <Link to={removeSpaceAndLowerCase(tag)} >
-                                #{removeSpaceAndLowerCase(tag)}
+                            <Link to={tag} >
+                                #{tag}
                             </Link>
                         </li>
                     ))}

@@ -5,10 +5,13 @@
     min-height: 100vh;
     
     .blog-posts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         list-style: none;
         margin-left: 0;
         padding: 0 1rem;
-        
+
         li {
             background: #fff;
             border: 1px solid #eee;
@@ -18,6 +21,7 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            max-width: 30rem;
             vertical-align: top;
             width: 100%;
             
@@ -25,7 +29,7 @@
                 text-decoration: none;
             }
 
-            h1 {
+            h2 {
                 font-family: Source Sans Pro, sans-serif;
                 font-size: 2rem;
                 font-weight: 500;
@@ -73,7 +77,20 @@
                 }
             }
         }
-    }     
+    }    
+    
+    .home-container-featured-tag {
+        border: 2px solid #000000;
+        box-shadow: 5px 6px 0px #000000;
+        grid-column: 1/-1;
+        margin: 0 0 3rem;
+
+        h1 {
+            font-size: 3rem;
+            margin: 1rem;
+            text-align: center;
+        }
+    }
 }
 
 //** MEDIA QUERIES **//
@@ -88,6 +105,12 @@
                     font-size: 1.5rem;
                     line-height: 1.8rem;
                 } 
+            }
+        }
+
+        .home-container-featured-tag {
+            h1 {
+                font-size: 2rem;
             }
         }
     }
@@ -110,6 +133,12 @@
                 .post-list-featured-image {
                     display: none;
                 }
+            }
+        }
+
+        .home-container-featured-tag {
+            h1 {
+                font-size: 1.5rem;
             }
         }
     }

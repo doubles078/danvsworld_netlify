@@ -23,11 +23,11 @@ const FeaturedPostCard = ({node}) => {
             />
         
             <div className="post-list-card-meta">
-              <h1>
+              <h2>
                 <Link to={node.slug}>
                   {node.title}
                 </Link>
-              </h1>
+              </h2>
               
               <a href={node.author.twitterLink} target="_blank">
                 {node.author.nickname} &bull; {node.publishDate}

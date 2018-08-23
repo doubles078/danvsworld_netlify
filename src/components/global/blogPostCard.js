@@ -14,11 +14,11 @@ const BlogPostCard = ({node}) => {
         <div className="post-list-card-details">
           <img src={node.author.avatar.responsiveResolution.src} className="post-list-avatar"/>
           <div className="post-list-card-meta">
-            <h1>
+            <h2>
               <Link to={node.slug}>
                 {node.title}
               </Link>
-            </h1>
+            </h2>
             
             <a href={node.author.twitterLink} target="_blank">
               {node.author.nickname} &bull; {node.publishDate}
