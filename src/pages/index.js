@@ -1,7 +1,6 @@
 import React from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 import FeaturedPostCard from '../components/global/featuredPostCard';
-import Header from '../components/global/header';
 import TagsList from '../components/global/TagsList/tagsList';
 
 const IndexPage = ({data}) => {
@@ -12,11 +11,7 @@ let featuredPost = allBlogPosts[0];
 
 
 return (
-  <div className="global-container">
-    <Header 
-      blogposts={allBlogPosts}
-    />
-    
+  <div>
     <div className="home-container">
       <div className="taglist-card">
         <h3>Categories</h3>

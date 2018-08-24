@@ -1,7 +1,6 @@
 import React from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 import TagsList from '../components/global//TagsList/tagsList';
-import Header from '../components/global/header';
 
 
 function generatePageTagContext(data) {
@@ -25,11 +24,7 @@ const HomepageTag = ({data}) => {
     let pageTag = window.location.pathname.slice(1);
 
     return (
-      <div className="global-container">
-        <Header 
-          blogposts={data.allContentfulBlog.edges}
-        />
-
+      <div>
         <div className="home-container">
             <div className="home-container-featured-tag">
               <h1>#{pageTag.toUpperCase()}</h1>

@@ -27,7 +27,6 @@ class BlogPost extends Component {
      }
 }
 
-
 BlogPost.propTypes = {
     data: PropTypes.object.isRequired
 }
