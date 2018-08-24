@@ -1,7 +1,8 @@
 import React from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 import FeaturedPostCard from '../components/global/featuredPostCard';
-import TagsList from '../components/global/tagsList';
+import Header from '../components/global/header';
+import TagsList from '../components/global/TagsList/tagsList';
 
 const IndexPage = ({data}) => {
 
@@ -11,13 +12,20 @@ let featuredPost = allBlogPosts[0];
 
 
 return (
+  <div className="global-container">
+    <Header 
+      blogposts={allBlogPosts}
+    />
+    
     <div className="home-container">
-      <TagsList 
-        blogposts={allBlogPosts}
-      />
+      <div className="taglist-card">
+        <h3>Categories</h3>
+          <TagsList 
+            blogposts={allBlogPosts}
+          />
+      </div>
 
       <main>
-
         <ul className='blog-posts'>
           <FeaturedPostCard node={featuredPost.node} />
 
@@ -29,6 +37,7 @@ return (
         Right Nav Bar
       </div>
     </div>
+  </div>
 )}
 
 

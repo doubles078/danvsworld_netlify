@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import SlideMenu from './slideMenu';
 
-const Header = () => (
+const Header = (props) => (
   <header className='header'>
     <div className='wrapper'>
       <h1>
@@ -16,8 +18,15 @@ const Header = () => (
           <path d="M451.604,571.221H348.395c-10.46,0-18.939,8.479-18.939,18.934c0,10.461,8.479,18.938,18.939,18.938h103.211  c10.457,0,18.937-8.479,18.937-18.938C470.542,579.698,462.063,571.221,451.604,571.221z"/>
         </svg>
       </h1>
+
+      <SlideMenu blogposts={props.blogposts} />
     </div>
   </header>
 )
+
+
+SlideMenu.propTypes = {
+  blogposts: PropTypes.array.isRequired
+}
 
 export default Header

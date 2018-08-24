@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
-import TagsList from '../components/global/tagsList';
+import TagsList from '../components/global//TagsList/tagsList';
+import Header from '../components/global/header';
 
 
 function generatePageTagContext(data) {
@@ -24,25 +25,34 @@ const HomepageTag = ({data}) => {
     let pageTag = window.location.pathname.slice(1);
 
     return (
-      <div className="home-container">
-          <div className="home-container-featured-tag">
-            <h1>#{pageTag.toUpperCase()}</h1>
-          </div>
-    
-          <TagsList 
-            blogposts={data.allContentfulBlog.edges}
-          />
-    
-          <main>
-            <ul className='blog-posts'>
-              {generatePageTagContext(data).map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
-            </ul>
-          </main>
-    
-          <div>
-            Right Nav Bar
-          </div>
-    
+      <div className="global-container">
+        <Header 
+          blogposts={data.allContentfulBlog.edges}
+        />
+
+        <div className="home-container">
+            <div className="home-container-featured-tag">
+              <h1>#{pageTag.toUpperCase()}</h1>
+            </div>
+            
+            <div className="taglist-card">
+              <h3>Categories</h3>
+              <TagsList 
+                blogposts={data.allContentfulBlog.edges}
+              />
+            </div>
+      
+            <main>
+              <ul className='blog-posts'>
+                {generatePageTagContext(data).map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
+              </ul>
+            </main>
+      
+            <div>
+              Right Nav Bar
+            </div>
+      
+        </div>
       </div>
     )
 } 

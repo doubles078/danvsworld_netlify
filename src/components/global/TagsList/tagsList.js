@@ -29,28 +29,24 @@ const TagsList = (props) => {
     })
 
     return (
-        <div className="taglist-card">
-            <h3>
-                Categories
-            </h3>
+
             <div>
                 <ul className="taglist-scrollbox">
                     {uniqueTags.map((tag) => (
-                        <li key={tag}>
-                            <Link to={tag} >
+                        <li key={tag} >
+                            <Link onClick={props.disablemenu} to={tag} >
                                 #{tag}
                             </Link>
                         </li>
                     ))}
                 </ul>
             </div>
-        </div>
     )
 }
 
 
 TagsList.propTypes = {
-    blogposts: PropTypes.array.isRequired
+    blogposts: PropTypes.array.isRequired,
 }
 
 
