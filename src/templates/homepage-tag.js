@@ -21,7 +21,7 @@ function removeSpaceAndLowerCase(tag) {
 
 
 const HomepageTag = ({data}) => {
-    let pageTag = window.location.pathname.slice(1);
+    let pageTag = window ? window.location.pathname.slice(1) : null;
 
     return (
       <div>
