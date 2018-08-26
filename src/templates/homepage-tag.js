@@ -7,7 +7,7 @@ function generatePageTagContext(data) {
     let list = data.allContentfulBlog.edges;
 
     return list.filter((edge) => {
-      let pageTag = window ? window.location.pathname.slice(1) : null;
+      let pageTag = !window ? null : window.location.pathname.slice(1);
       let tagList = edge.node.tags.map((tag) => removeSpaceAndLowerCase(tag));
 
       return tagList.includes(pageTag);
@@ -21,7 +21,7 @@ function removeSpaceAndLowerCase(tag) {
 
 
 const HomepageTag = ({data}) => {
-    let pageTag = window ? window.location.pathname.slice(1) : null;
+  let pageTag = !window ? null : window.location.pathname.slice(1);
 
     return (
       <div>
