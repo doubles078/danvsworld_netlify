@@ -1,53 +1,78 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 import TagsList from '../components/global//TagsList/tagsList';
 
 
-function generatePageTagContext(data) {
+
+
+
+class HomepageTag extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        pageTag: "",
+        tagsList: [],
+        visible: false
+    }
+
+    this.generatePageTagContext = this.generatePageTagContext.bind(this);
+  }
+
+  componentDidMount() {
+    let pageTag = window !== "undefined" && window.location.pathname.slice(1);
+
+    this.generatePageTagContext(this.props.data, pageTag)
+
+    this.setState({
+      pageTag 
+    })
+  }
+ 
+  generatePageTagContext(data, pageTag) {
     let list = data.allContentfulBlog.edges;
+    
+    
+
+    function removeSpaceAndLowerCase(tag) {
+      return tag.toLowerCase().replace(/\s/g, '');
+    } 
 
     return list.filter((edge) => {
-      let pageTag
 
       if (typeof window !== 'undefined') {
-          pageTag = window.location.pathname.slice(1);
+          var pageTag = window.location.pathname.slice(1);
       }
-
       let tagList = edge.node.tags.map((tag) => removeSpaceAndLowerCase(tag));
-
+      
       return tagList.includes(pageTag);
     });
 
-}
+    this.setState({
+      tagsList: tagList.includes(pageTag),
+      pageTag
+    }) 
+  }
 
-function removeSpaceAndLowerCase(tag) {
-  return tag.toLowerCase().replace(/\s/g, '');
-}
-
-
-const HomepageTag = ({data}) => {
-    let pageTag;
-
-    if (typeof window !== 'undefined') {
-        pageTag = window.location.pathname.slice(1);
-    }
+  render() {
     return (
       <div>
         <div className="home-container">
             <div className="home-container-featured-tag">
-              <h1>#{pageTag.toUpperCase()}</h1>
+              <h1>#{this.state.pageTag.toUpperCase()}</h1>
             </div>
             
             <div className="taglist-card">
               <h3>Categories</h3>
               <TagsList 
-                blogposts={data.allContentfulBlog.edges}
+                blogposts={this.props.data.allContentfulBlog.edges}
               />
             </div>
       
             <main>
               <ul className='blog-posts'>
-                {generatePageTagContext(data).map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
+                {this.generatePageTagContext(this.props.data).map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
               </ul>
             </main>
       
@@ -58,9 +83,8 @@ const HomepageTag = ({data}) => {
         </div>
       </div>
     )
+  }  
 } 
-
-
 
 export default HomepageTag
 

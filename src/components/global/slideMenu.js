@@ -44,11 +44,12 @@ class SlideMenu extends Component {
                         <button onClick={this.handleMouseDown}>
                             <h3>CLOSE X</h3>
                         </button>
-                        
-                        <TagsList 
-                            blogposts={this.props.blogposts} 
-                            disablemenu={this.handleMouseDown}
-                        />
+                        <nav aria-label="sitewide navigation">
+                            <TagsList 
+                                blogposts={this.props.blogposts} 
+                                disablemenu={this.handleMouseDown}
+                            />
+                        </nav>
                     </div>
                 </div>
             </div>
