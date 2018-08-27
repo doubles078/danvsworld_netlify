@@ -9,7 +9,7 @@ function generatePageTagContext(data) {
     return list.filter((edge) => {
 
     if (typeof window !== 'undefined') {
-        let pageTag = window.location.pathname.slice(1);
+        var pageTag = window.location.pathname.slice(1);
     }
     let tagList = edge.node.tags.map((tag) => removeSpaceAndLowerCase(tag));
 
@@ -25,7 +25,7 @@ function removeSpaceAndLowerCase(tag) {
 
 const HomepageTag = ({data}) => {
     if (typeof window !== 'undefined') {
-        let pageTag = window.location.pathname.slice(1);
+        var pageTag = window.location.pathname.slice(1);
     }
     return (
       <div>

@@ -13,8 +13,15 @@ const TemplateWrapper = ({ children, data }) => (
         meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },
-        ]}
-      />    
+        ]}>
+        
+
+        <html lang="en" />
+        
+      </Helmet>
+
+        
+    
       <div className="global-container">
         <Header 
             blogposts={data.allContentfulBlog.edges}
