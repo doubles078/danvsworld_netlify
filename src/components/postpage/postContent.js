@@ -26,7 +26,7 @@ const PostContent = (props) => (
 
 PostContent.propTypes = {
     avatar: PropTypes.string,
-    content: PropTypes.html,
+    content: PropTypes.string,
     description: PropTypes.string,
     name: PropTypes.string,
     summary: PropTypes.string,
