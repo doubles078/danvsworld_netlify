@@ -1,0 +1,28 @@
+.header {
+    background: $primary-color;
+    margin-bottom: 1.45rem;
+
+    .wrapper {
+        align-items: center;
+        display: flex;
+        margin: 0 auto;
+        max-width: 66rem;
+        padding: 1.45rem 1.0875rem;
+
+        h1 {
+            align-items: center;
+            display: flex;
+            margin: 0;
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+
+            svg {
+                fill: $white;
+                margin-left: 15px;
+            }
+        }
+    }
+}

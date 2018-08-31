@@ -1,0 +1,49 @@
+.post-list-card-details {
+    display: flex;
+    padding: 1rem;
+
+    .post-list-avatar {
+        border-radius: 30px;
+        height: 50px;
+        margin: 0;
+        width: 50px;
+    }
+    
+    .post-list-card-meta {
+        margin-left: 1rem;
+
+        a {
+            text-decoration: none;
+        }
+        
+        h2 {
+            font-family: Source Sans Pro, sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 2.5rem;
+            margin: 0;
+            text-align: left !important;
+
+            a {
+                color: $main-font;
+            }
+        }
+    }
+}
+
+
+.post-list-featured-image {
+    flex: 0 1 100%;
+}
+
+
+@media (max-width: 420px) {
+    .post-list-card-meta {
+        font-size: 0.9em;
+    }
+
+    .post-list-featured-image {
+        display: none;
+    }
+}
+        

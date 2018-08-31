@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import BlogPostCard from '../components/global/blogPostCard';
-import TagsList from '../components/global//TagsList/tagsList';
-
-
-
-
+import BlogPostCard from '../components/global/BlogPostCard';
+import FeaturedTagHeader from '../components/global/featuredTagHeader';
+import TagsListCard from '../components/global/TagsList/tagsListCard';
 
 class HomepageTag extends Component {
 
@@ -32,8 +29,6 @@ class HomepageTag extends Component {
  
   generatePageTagContext(data, pageTag) {
     let list = data.allContentfulBlog.edges;
-    
-    
 
     function removeSpaceAndLowerCase(tag) {
       return tag.toLowerCase().replace(/\s/g, '');
@@ -59,16 +54,10 @@ class HomepageTag extends Component {
     return (
       <div>
         <div className="home-container">
-            <div className="home-container-featured-tag">
-              <h1>#{this.state.pageTag.toUpperCase()}</h1>
-            </div>
+
+            <FeaturedTagHeader tag={this.state.pageTag} />
             
-            <div className="taglist-card">
-              <h3>Categories</h3>
-              <TagsList 
-                blogposts={this.props.data.allContentfulBlog.edges}
-              />
-            </div>
+            <TagsListCard blogposts={this.props.data.allContentfulBlog.edges} />
       
             <main>
               <ul className='blog-posts'>

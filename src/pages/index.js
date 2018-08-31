@@ -1,7 +1,6 @@
 import React from 'react';
-import BlogPostCard from '../components/global/blogPostCard';
-import FeaturedPostCard from '../components/global/featuredPostCard';
-import TagsList from '../components/global/TagsList/tagsList';
+import BlogPostsList from '../components/global/blogPostsList';
+import TagsListCard from '../components/global/TagsList/tagsListCard';
 
 const IndexPage = ({data}) => {
 
@@ -13,24 +12,16 @@ let featuredPost = allBlogPosts[0];
 return (
   <div>
     <div className="home-container">
-      <div className="taglist-card">
-        <h3>Categories</h3>
-          <TagsList 
-            blogposts={allBlogPosts}
-          />
-      </div>
+      <TagsListCard blogposts={allBlogPosts} />
 
       <main>
-        <ul className='blog-posts'>
-          <FeaturedPostCard node={featuredPost.node} />
-
-          {blogsWithoutLatestPost.map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
-        </ul>
+        <BlogPostsList featuredpost={featuredPost.node} posts={blogsWithoutLatestPost} />
       </main>
 
       <div>
         Right Nav Bar
       </div>
+      
     </div>
   </div>
 )}

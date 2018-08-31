@@ -1,0 +1,42 @@
+.taglist-card {
+    border: 2px solid $light-gray;
+    border-radius: $cards-border-radius;
+    height: 400px;
+
+    h3 {
+        font-weight: normal;
+        margin: 0;
+        padding: 1rem;
+    }
+    div {
+        overflow-y: scroll;
+        height: 325px;
+
+        ul {
+            margin: 0;
+            padding-left: 1rem;
+
+            li {
+                font-size: 0.9rem;
+                list-style: none;
+                margin-bottom: 0.5rem;
+                
+                a {
+                    color: $main-font;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        color: $link-color;
+                    }
+                }
+            }
+        }
+    }  
+}
+
+//** MEDIA QUERIES **//
+@media (max-width: 900px) {
+    .taglist-card {
+        display: none;        
+    }
+ }
