@@ -20,18 +20,15 @@ export class NewsLetter extends Component {
     this.setState({
       result
     })
-
-    console.log(this.state)
   }
 
   render () {
-    let listFields = {FNAME: 'Dan', LNAME: 'Donohue'}
 
     return (
 
       <div className="newsLetter">
         <h3>Sign Up for Our News Letter</h3>
-          <form onSubmit={() => this._handleSubmit('danieldonohue@live.com', listFields)}>
+          <form>
           <label>
               Name:
               <input type="text" name="name" />
