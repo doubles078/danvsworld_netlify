@@ -15,9 +15,7 @@ const TemplateWrapper = ({ children, data }) => (
           { name: 'keywords', content: 'sample, something' },
         ]}>
         
-
         <html lang="en" />
-        
       </Helmet>
 
         

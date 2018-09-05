@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AuthorCard from '../components/postpage/authorCard';
+import CommentsSection from '../components/postpage/commentsSection';
 import PostContent from '../components/postpage/postContent';
 
 class BlogPost extends Component {
@@ -22,6 +23,10 @@ class BlogPost extends Component {
                     twitter={author.twitterLink}
                     wordcount={post.childMarkdownRemark.wordCount.words}
                 />   
+
+                <CommentsSection 
+                    id={title}
+                />
             </div>
         )
      }

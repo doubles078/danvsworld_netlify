@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BlogPostCard from '../components/global/BlogPostCard';
 import FeaturedTagHeader from '../components/global/featuredTagHeader';
+import NewsLetter from '../components/postpage/newsLetter';
 import TagsListCard from '../components/global/TagsList/tagsListCard';
 
 class HomepageTag extends Component {
@@ -66,7 +67,7 @@ class HomepageTag extends Component {
             </main>
       
             <div>
-              Right Nav Bar
+              <NewsLetter />            
             </div>
       
         </div>
