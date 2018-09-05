@@ -65,11 +65,7 @@ class HomepageTag extends Component {
                 {this.generatePageTagContext(this.props.data).map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
               </ul>
             </main>
-      
-            <div>
-              <NewsLetter />            
-            </div>
-      
+            
         </div>
       </div>
     )

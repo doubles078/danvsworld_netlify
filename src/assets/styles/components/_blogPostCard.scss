@@ -38,12 +38,19 @@
 
 
 @media (max-width: 420px) {
-    .post-list-card-meta {
-        font-size: 0.9em;
-    }
+.post-list-card-details {
+        .post-list-card-meta {
+            font-size: 0.9em;
 
-    .post-list-featured-image {
-        display: none;
+            h2 {
+                font-size: 1.4rem;
+                line-height: 1.2;
+            }
+        }
+
+        .post-list-featured-image {
+            display: none;
+        }
     }
 }
         

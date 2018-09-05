@@ -18,8 +18,6 @@ const TemplateWrapper = ({ children, data }) => (
         <html lang="en" />
       </Helmet>
 
-        
-    
       <div className="global-container">
         <Header 
             blogposts={data.allContentfulBlog.edges}
@@ -32,7 +30,6 @@ const TemplateWrapper = ({ children, data }) => (
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
-
 
 export const pageQuery = graphql`
   query GlobalQuery {

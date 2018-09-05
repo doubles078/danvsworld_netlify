@@ -1,11 +1,15 @@
 import React from 'react';
+import { DiscussionEmbed } from "disqus-react";
 
-function createMarkup() {
-    return {__html: `<div id="disqus_thread"></div>`};
-  }
 
-const CommentsSection = () => {
-    return <div dangerouslySetInnerHTML={createMarkup()} />;
+const CommentsSection = (props) => {
+    const disqusShortname = "testing";
+    const disqusConfig = {
+      identifier: props.id,
+      title: props.title,
+    };
+
+    return <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />;
 }
 
 export default CommentsSection

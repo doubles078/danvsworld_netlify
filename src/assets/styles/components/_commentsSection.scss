@@ -1,0 +1,10 @@
+#disqus_thread {
+    grid-column-start: 2;
+    padding:0 3rem 0 3rem;
+}
+
+@media (max-width: 1091px) {
+   #disqus_thread {
+        padding: 0rem 1rem 0 0;
+    }
+}

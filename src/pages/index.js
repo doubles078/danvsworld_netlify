@@ -17,11 +17,6 @@ return (
       <main>
         <BlogPostsList featuredpost={featuredPost.node} posts={blogsWithoutLatestPost} />
       </main>
-
-      <div>
-        Right Nav Bar
-      </div>
-      
     </div>
   </div>
 )}

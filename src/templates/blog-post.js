@@ -26,6 +26,7 @@ class BlogPost extends Component {
 
                 <CommentsSection 
                     id={title}
+                    title={title}
                 />
             </div>
         )
