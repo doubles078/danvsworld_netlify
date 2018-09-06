@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogPostsList from '../components/global/blogPostsList';
-import TagsListCard from '../components/global/TagsList/tagsListCard';
+import TagsListCard from '../components/global/tagslist/tagsListCard';
 
 const IndexPage = ({data}) => {
 
