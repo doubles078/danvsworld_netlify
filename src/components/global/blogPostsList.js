@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import BlogPostCard from './BlogPostCard';
+import BlogPostCard from './blogPostCard';
 import FeaturedPostCard from './featuredPostCard';
 
 

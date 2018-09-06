@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BlogPostCard from '../components/global/BlogPostCard';
+import BlogPostCard from '../components/global/blogPostCard';
 import FeaturedTagHeader from '../components/global/featuredTagHeader';
 import TagsListCard from '../components/global/tagslist/tagsListCard';
 
