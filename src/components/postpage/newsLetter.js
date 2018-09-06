@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 export class NewsLetter extends Component {
   render () {
