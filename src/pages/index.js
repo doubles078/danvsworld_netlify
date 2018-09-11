@@ -49,7 +49,7 @@ export const pageQuery = graphql`
             twitterLink
           }
           featuredImage {
-            responsiveResolution {
+            sizes(quality:100) {
               src
             }
           }

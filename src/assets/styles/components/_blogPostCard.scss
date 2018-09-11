@@ -34,11 +34,13 @@
 
 .post-list-featured-image {
     flex: 0 1 100%;
+    margin-bottom: 0px;
+    max-height: 300px;
 }
 
 
 @media (max-width: 420px) {
-.post-list-card-details {
+    .post-list-card-details {
         .post-list-card-meta {
             font-size: 0.9em;
 
@@ -47,10 +49,10 @@
                 line-height: 1.2;
             }
         }
+    }
 
-        .post-list-featured-image {
-            display: none;
-        }
+    .post-list-featured-image {
+        max-height: 170px;
     }
 }
         

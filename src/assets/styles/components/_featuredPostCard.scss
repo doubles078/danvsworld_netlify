@@ -34,6 +34,8 @@
 
 .featured-post-list-featured-image {
     flex: 0 1 100%;
+    margin-bottom: 0px;
+    max-height: 300px;
 }
 
 
@@ -44,6 +46,7 @@
 
     .featured-post-list-featured-image {
         display: none;
+        max-height: 170px;
     }
 }
         

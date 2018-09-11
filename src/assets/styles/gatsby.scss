@@ -356,8 +356,7 @@ html {
     padding-right: 0;
     padding-top: 0;
     margin-bottom: 1.45rem;
-    list-style-position: outside;
-    list-style-image: none;
+    list-style: none;
   }
   dl {
     margin-left: 0;
@@ -518,10 +517,20 @@ html {
     font-weight: bold;
   }
   li {
-    margin-bottom: calc(1.45rem / 2);
+    margin-bottom: calc(3rem / 2);
+  }
+  ol{
+    counter-reset: my-awesome-counter;
   }
   ol li {
+    counter-increment: my-awesome-counter;
+    display: flex;
     padding-left: 0;
+  }
+  ol li::before{
+    content: counter(my-awesome-counter) ". ";
+    font-weight: bold;
+    margin-right: 1rem;
   }
   ul li {
     padding-left: 0;
