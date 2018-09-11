@@ -2,19 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Header from '../components/global/header';
+import ReactGA from 'react-ga';
 
 
+import favicon from '../assets/images/favicon.png';
 import '../assets/styles/main.scss';
 
-const TemplateWrapper = ({ children, data }) => (
+function initializeReactGA() {
+  ReactGA.initialize('UA-37084048-6');
+}
+
+const TemplateWrapper = ({ children, data }) => {
+  initializeReactGA()
+
+  return (
     <div>
       <Helmet
         title="Robomo.io - A Blog for Technical Marketers and Automators"
         meta={[
           { name: 'description', content: 'Sample' },
           { name: 'keywords', content: 'sample, something' },
-        ]}>
+        ]}
         
+        link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
+      >  
         <html lang="en" />
       </Helmet>
 
@@ -25,7 +36,7 @@ const TemplateWrapper = ({ children, data }) => (
         {children()}
       </div>
     </div>
-)
+)}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

@@ -7,7 +7,8 @@ import PostContent from '../components/postpage/postContent';
 class BlogPost extends Component {
     render() {
         const { title, post, author, quickSummary, publishDate } = this.props.data.contentfulBlog
-
+        ReactGA.pageview(this.props.title);
+        
         return (
             <div className="blog-post-container">
                 <AuthorCard 

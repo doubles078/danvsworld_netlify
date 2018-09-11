@@ -51,6 +51,8 @@ class HomepageTag extends Component {
   }
 
   render() {
+    ReactGA.pageview(`Featured Tag: ${this.state.pageTag}`);
+
     return (
       <div>
         <div className="home-container">
