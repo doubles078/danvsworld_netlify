@@ -1,6 +1,5 @@
 import React from 'react';
 import BlogPostsList from '../components/global/blogPostsList';
-import ReactGA from 'react-ga';
 import TagsListCard from '../components/global/tagslist/tagsListCard';
 
 const IndexPage = ({data}) => {
@@ -8,11 +7,6 @@ const IndexPage = ({data}) => {
 let allBlogPosts = data.allContentfulBlog.edges;
 let blogsWithoutLatestPost = allBlogPosts.slice(1,allBlogPosts.length);
 let featuredPost = allBlogPosts[0];
-
-if (typeof window !== 'undefined') {
-  ReactGA.pageview('/homepage');
-}
-
 
 return (
   <div>

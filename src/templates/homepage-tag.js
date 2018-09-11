@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 import FeaturedTagHeader from '../components/global/featuredTagHeader';
-import ReactGA from 'react-ga';
 import TagsListCard from '../components/global/tagslist/tagsListCard';
 
 class HomepageTag extends Component {
@@ -52,10 +51,6 @@ class HomepageTag extends Component {
   }
 
   render() {
-    if (typeof window !== 'undefined') {
-      ReactGA.pageview(`Featured Tag: ${this.state.pageTag}`);
-    }
-
     return (
       <div>
         <div className="home-container">

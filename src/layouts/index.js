@@ -2,20 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Header from '../components/global/header';
-import ReactGA from 'react-ga';
-
 
 import favicon from '../assets/images/favicon.png';
 import '../assets/styles/main.scss';
 
-function initializeReactGA() {
-  ReactGA.initialize('UA-37084048-6');
-}
-
 const TemplateWrapper = ({ children, data }) => {
-  if (typeof window !== 'undefined') {
-    initializeReactGA()
-  }
 
   return (
     <div>
