@@ -13,7 +13,9 @@ function initializeReactGA() {
 }
 
 const TemplateWrapper = ({ children, data }) => {
-  initializeReactGA()
+  if (typeof window !== 'undefined') {
+    initializeReactGA()
+  }
 
   return (
     <div>

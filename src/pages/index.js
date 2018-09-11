@@ -8,7 +8,11 @@ const IndexPage = ({data}) => {
 let allBlogPosts = data.allContentfulBlog.edges;
 let blogsWithoutLatestPost = allBlogPosts.slice(1,allBlogPosts.length);
 let featuredPost = allBlogPosts[0];
-ReactGA.pageview('/homepage');
+
+if (typeof window !== 'undefined') {
+  ReactGA.pageview('/homepage');
+}
+
 
 return (
   <div>

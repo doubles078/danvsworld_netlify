@@ -52,7 +52,9 @@ class HomepageTag extends Component {
   }
 
   render() {
-    ReactGA.pageview(`Featured Tag: ${this.state.pageTag}`);
+    if (typeof window !== 'undefined') {
+      ReactGA.pageview(`Featured Tag: ${this.state.pageTag}`);
+    }
 
     return (
       <div>

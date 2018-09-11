@@ -8,7 +8,9 @@ import ReactGA from 'react-ga';
 class BlogPost extends Component {
     render() {
         const { title, post, author, quickSummary, publishDate } = this.props.data.contentfulBlog
-        ReactGA.pageview(this.props.title);
+        if (typeof window !== 'undefined') {
+            ReactGA.pageview(this.props.title);
+        }
         
         return (
             <div className="blog-post-container">
