@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 import FeaturedTagHeader from '../components/global/featuredTagHeader';
+import ReactGA from 'react-ga';
 import TagsListCard from '../components/global/tagslist/tagsListCard';
 
 class HomepageTag extends Component {

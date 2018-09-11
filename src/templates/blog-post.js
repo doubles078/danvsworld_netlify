@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AuthorCard from '../components/postpage/authorCard';
 import CommentsSection from '../components/postpage/commentsSection';
 import PostContent from '../components/postpage/postContent';
+import ReactGA from 'react-ga';
 
 class BlogPost extends Component {
     render() {
