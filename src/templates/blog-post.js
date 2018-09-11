@@ -3,14 +3,10 @@ import PropTypes from 'prop-types';
 import AuthorCard from '../components/postpage/authorCard';
 import CommentsSection from '../components/postpage/commentsSection';
 import PostContent from '../components/postpage/postContent';
-import ReactGA from 'react-ga';
 
 class BlogPost extends Component {
     render() {
         const { title, post, author, quickSummary, publishDate } = this.props.data.contentfulBlog
-        if (typeof window !== 'undefined') {
-            ReactGA.pageview(this.props.title);
-        }
         
         return (
             <div className="blog-post-container">
