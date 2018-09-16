@@ -23,3 +23,11 @@
         }
     }
 }
+
+//** MEDIA QUERIES **//
+@media (max-width: 420px) {
+    .date {
+        flex-direction: column;
+    }
+}
+  
