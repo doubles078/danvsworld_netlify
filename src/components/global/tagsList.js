@@ -29,8 +29,7 @@ const TagsList = (props) => {
     })
 
     return (
-
-            <div>
+            <div className="tagslist">
                 <ul className="taglist-scrollbox">
                     {uniqueTags.map((tag) => (
                         <li key={tag} >

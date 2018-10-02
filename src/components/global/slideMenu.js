@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
-import TagsList from './tagslist/tagsList';
+import TagsList from './tagsList';
 
 class SlideMenu extends Component {
     constructor(props) {

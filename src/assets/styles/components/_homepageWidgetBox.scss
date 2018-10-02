@@ -1,0 +1,17 @@
+.homepage-widget-box {
+    border: 2px solid $light-gray;
+    border-radius: $cards-border-radius;
+    
+    h3 {
+        font-weight: bold;
+        margin: 0;
+        padding: 0.5rem;
+    }
+}
+
+//** MEDIA QUERIES **//
+@media (max-width: 900px) {
+    .homepage-widget-box {
+        display: none;        
+    }
+ }

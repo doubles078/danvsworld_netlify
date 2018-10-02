@@ -1,0 +1,25 @@
+.tagslist {
+    overflow-y: scroll;
+    height: 325px;
+
+    ul {
+        margin: 0;
+        padding-left: 0.5rem;
+
+        li {
+            font-size: 0.9rem;
+            list-style: none;
+            margin-bottom: 0.5rem;
+            
+            a {
+                color: $main-font;
+                text-decoration: none;
+                
+                &:hover {
+                    color: $link-color;
+                }
+            }
+        }
+    }
+}  
+

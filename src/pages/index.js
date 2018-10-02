@@ -1,7 +1,8 @@
 import React from 'react';
 import BlogPostsList from '../components/global/blogPostsList';
-import TagsListCard from '../components/global/tagslist/tagsListCard';
-
+import TagsList from '../components/global/tagsList';
+import EmailSignupForm from '../components/global/emailSignupForm';
+import HomepageWidgetBox from '../components/global/homepageWidgetBox';
 const IndexPage = ({data}) => {
 
 let allBlogPosts = data.allContentfulBlog.edges;
@@ -11,11 +12,22 @@ let featuredPost = allBlogPosts[0];
 return (
   <div>
     <div className="home-container">
-      <TagsListCard blogposts={allBlogPosts} />
+      
+      <div>
+        <HomepageWidgetBox title={'Categories'}>
+          <TagsList blogposts={allBlogPosts} />
+        </HomepageWidgetBox>
+      </div>
 
       <main>
         <BlogPostsList featuredpost={featuredPost.node} posts={blogsWithoutLatestPost} />
       </main>
+
+       <div>
+        <HomepageWidgetBox title={'Email Signup'}>
+          <EmailSignupForm />
+        </HomepageWidgetBox>
+      </div>
     </div>
   </div>
 )}

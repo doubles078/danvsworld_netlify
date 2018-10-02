@@ -13,8 +13,8 @@ const TemplateWrapper = ({ children, data }) => {
       <Helmet
         title="Robomo.io - A Blog for Technical Marketers and Automators"
         meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
+          { name: 'description', content: 'A Blog for Technical Marketers and Automators' },
+          { name: 'keywords', content: 'marketing, automation, bots, technical' },
         ]}
         
         link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}

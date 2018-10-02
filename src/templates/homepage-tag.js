@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import BlogPostCard from '../components/global/blogPostCard';
 import FeaturedTagHeader from '../components/global/featuredTagHeader';
-import TagsListCard from '../components/global/tagslist/tagsListCard';
+import TagsList from '../components/global/tagsList';
+import EmailSignupForm from '../components/global/emailSignupForm';
+import HomepageWidgetBox from '../components/global/homepageWidgetBox';
 
 class HomepageTag extends Component {
 
@@ -56,8 +58,16 @@ class HomepageTag extends Component {
         <div className="home-container">
 
             <FeaturedTagHeader tag={this.state.pageTag} />
-            
-            <TagsListCard blogposts={this.props.data.allContentfulBlog.edges} />
+
+            <div>
+              <HomepageWidgetBox title={'Categories'}>
+                <TagsList blogposts={this.props.data.allContentfulBlog.edges} />
+              </HomepageWidgetBox>
+
+              <HomepageWidgetBox title={'Email Signup'}>
+                <EmailSignupForm />
+              </HomepageWidgetBox>
+            </div>
       
             <main>
               <ul className='blog-posts'>
