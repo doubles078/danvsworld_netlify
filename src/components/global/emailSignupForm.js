@@ -16,7 +16,7 @@ class EmailSignupForm extends Component {
         if (!email || !name) {
             e.preventDefault()
             alert('Oops a field was left empty.')
-        } else {console.log(name);console.log(email);}
+        }
     }
 
     render (){
@@ -27,7 +27,8 @@ class EmailSignupForm extends Component {
                 method="POST"
                 onSubmit={(e) => this.handleSubmit(e)}
                 action="/thanks"
-                netlify>
+                data-netlify="true" 
+                data-netlify-honeypot="bot-field">
               
                 <input 
                     type="text" 
