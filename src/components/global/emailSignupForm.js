@@ -6,14 +6,21 @@ class EmailSignupForm extends Component {
         this.state = {name: '', email: ''};
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
       }
     
     handleInputChange = (e) => {
         let value = e.target.value;
-        let namez = e.target.name;
+        let inputName = e.target.name;
 
-        this.setState({ namez: value}) 
-        console.log(value)
+        this.setState({ inputName: value}) 
+    }
+
+    handleSubmit = (e) => {
+        if (!this.state.name || !this.state.email) {
+            e.preventDefault()
+            alert('Oops a field was left empty.')
+        }
     }
 
     render (){
@@ -22,11 +29,12 @@ class EmailSignupForm extends Component {
                 className="subscription-form" 
                 name="blog-subscription" 
                 method="POST"
-                
+                onSubmit={(e) => this.handleSubmit(e)}
+                action="/thanks"
                 netlify>
               
-                <input type="text" name="name" placeholder="Name" onChange={(e)=>this.handleInputChange(e)} /> 
-                <input type="email" name="email" placeholder="Email" onChange={(e)=>this.handleInputChange(e)}/>
+                <input type="text" name="name" placeholder="Name" onChange={(e) => this.handleInputChange(e)} /> 
+                <input type="email" name="email" placeholder="Email" onChange={(e) => this.handleInputChange(e)}/>
     
                 <button type="submit">Send</button>
             </form>
