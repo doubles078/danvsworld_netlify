@@ -1,92 +1,86 @@
-import React, { Component } from 'react';
-import BlogPostCard from '../components/global/blogPostCard';
-import FeaturedTagHeader from '../components/global/featuredTagHeader';
-import TagsList from '../components/global/tagsList';
-import EmailSignupForm from '../components/global/emailSignupForm';
-import HomepageWidgetBox from '../components/global/homepageWidgetBox';
+import React, { Component } from 'react'
+import BlogPostCard from '../components/global/blogPostCard'
+import FeaturedTagHeader from '../components/global/featuredTagHeader'
+import TagsList from '../components/global/tagsList'
+import EmailSignupForm from '../components/global/emailSignupForm'
+import HomepageWidgetBox from '../components/global/homepageWidgetBox'
 
 class HomepageTag extends Component {
-
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-        pageTag: "",
-        tagsList: [],
-        visible: false
+      pageTag: '',
+      tagsList: [],
+      visible: false,
     }
 
-    this.generatePageTagContext = this.generatePageTagContext.bind(this);
+    this.generatePageTagContext = this.generatePageTagContext.bind(this)
   }
 
   componentDidMount() {
-    let pageTag = window !== "undefined" && window.location.pathname.slice(1);
+    let pageTag = window !== 'undefined' && window.location.pathname.slice(1)
 
-    this.generatePageTagContext(this.props.data, pageTag)
+    let pageContext = this.generatePageTagContext(this.props.data, pageTag)
 
     this.setState({
-      pageTag 
+      pageTag,
+      tagsList: pageContext,
     })
   }
- 
+
   generatePageTagContext(data, pageTag) {
-    let list = data.allContentfulBlog.edges;
+    let listOfPosts = data.allContentfulBlog.edges
 
     function removeSpaceAndLowerCase(tag) {
-      return tag.toLowerCase().replace(/\s/g, '');
-    } 
+      return tag.toLowerCase().replace(/\s/g, '')
+    }
 
-    return list.filter((edge) => {
+    const filteredListOfPosts = listOfPosts.filter(edge => {
+      console.log(edge)
+      let tagList = edge.node.tags.map(tag => removeSpaceAndLowerCase(tag))
 
-      if (typeof window !== 'undefined') {
-          var pageTag = window.location.pathname.slice(1);
-      }
-      let tagList = edge.node.tags.map((tag) => removeSpaceAndLowerCase(tag));
-      
-      return tagList.includes(pageTag);
-    });
+      tagList.includes(pageTag)
+    })
 
-    this.setState({
-      tagsList: tagList.includes(pageTag),
-      pageTag
-    }) 
+    return filteredListOfPosts
   }
 
   render() {
     return (
       <div>
         <div className="home-container">
+          <FeaturedTagHeader tag={this.state.pageTag} />
 
-            <FeaturedTagHeader tag={this.state.pageTag} />
+          <div>
+            <HomepageWidgetBox title={'Categories'}>
+              <TagsList blogposts={this.props.data.allContentfulBlog.edges} />
+            </HomepageWidgetBox>
 
-            <div>
-              <HomepageWidgetBox title={'Categories'}>
-                <TagsList blogposts={this.props.data.allContentfulBlog.edges} />
-              </HomepageWidgetBox>
+            <HomepageWidgetBox title={'Email Signup'}>
+              <EmailSignupForm />
+            </HomepageWidgetBox>
+          </div>
 
-              <HomepageWidgetBox title={'Email Signup'}>
-                <EmailSignupForm />
-              </HomepageWidgetBox>
-            </div>
-      
-            <main>
-              <ul className='blog-posts'>
-                {this.generatePageTagContext(this.props.data).map((edge) => <BlogPostCard node={edge.node} key={edge.node.id}/>)}
-              </ul>
-            </main>
-            
+          <main>
+            <ul className="blog-posts">
+              {this.generatePageTagContext(this.props.data).map(edge => (
+                <BlogPostCard node={edge.node} key={edge.node.id} />
+              ))}
+            </ul>
+          </main>
         </div>
       </div>
     )
-  }  
-} 
+  }
+}
 
 export default HomepageTag
 
-export const pageQuery = graphql`
+export const pageQuery = graphql(`
   query HomePageTag {
-    allContentfulBlog ( 
-      filter: { node_locale: {eq: "en-US"} },
+    allContentfulBlog(
+      filter: { tags: { in: window.location.pathname.slice(1) } }
       sort: { fields: [publishDate], order: DESC }
     ) {
       edges {
@@ -95,14 +89,14 @@ export const pageQuery = graphql`
             name
             nickname
             avatar {
-              responsiveResolution(cropFocus: TOP, width: 50, height: 50) {
+              resolutions {
                 src
               }
             }
             twitterLink
           }
           featuredImage {
-            responsiveResolution {
+            resolutions {
               src
             }
           }
@@ -120,4 +114,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`)
