@@ -4,7 +4,7 @@ import FeaturedTagHeader from '../components/global/featuredTagHeader'
 import TagsList from '../components/global/tagsList'
 import EmailSignupForm from '../components/global/emailSignupForm'
 import HomepageWidgetBox from '../components/global/homepageWidgetBox'
-
+import { taghook } from '../components/hooks/taghook'
 class HomepageTag extends Component {
   constructor(props) {
     super(props)
@@ -37,16 +37,26 @@ class HomepageTag extends Component {
     }
 
     const filteredListOfPosts = listOfPosts.filter(edge => {
-      console.log(edge)
-      let tagList = edge.node.tags.map(tag => removeSpaceAndLowerCase(tag))
+      edge.node.tags.map(tag => {
+        console.log(tag)
+        if (removeSpaceAndLowerCase(tag) === pageTag) {
+          console.log('success!')
+          return true
+        }
+        console.log('fail!')
+        console.log(pageTag)
+        console.log('Should equal')
+        console.log(removeSpaceAndLowerCase(tag))
 
-      tagList.includes(pageTag)
+        return false
+      })
     })
 
     return filteredListOfPosts
   }
 
   render() {
+    console.log(window.location.pathname.slice(1))
     return (
       <div>
         <div className="home-container">
@@ -77,10 +87,10 @@ class HomepageTag extends Component {
 
 export default HomepageTag
 
-export const pageQuery = graphql(`
+export const pageQuery = graphql`
   query HomePageTag {
     allContentfulBlog(
-      filter: { tags: { in: window.location.pathname.slice(1) } }
+      filter: { node_locale: { eq: "en-US" } }
       sort: { fields: [publishDate], order: DESC }
     ) {
       edges {
@@ -114,4 +124,4 @@ export const pageQuery = graphql(`
       }
     }
   }
-`)
+`

@@ -17,7 +17,7 @@ const FeaturedPostCard = ({ node }) => {
       <div className="post-list-card-details">
         <div className="post-list-card-meta">
           <h2>
-            <Link to={node.slug}>{node.title}</Link>
+            <Link to={`/${node.slug}`}>{node.title}</Link>
           </h2>
 
           <a
