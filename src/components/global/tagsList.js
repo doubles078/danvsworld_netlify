@@ -1,11 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
-import { setTag } from '../components/hooks/taghook'
-
+import TagContext from '../context/TagContext'
 const TagsList = props => {
   let uniqueTags = []
-
   function removeSpaceAndLowerCase(tag) {
     return tag.toLowerCase().replace(/\s/g, '')
   }
@@ -22,9 +20,6 @@ const TagsList = props => {
     return emptyarray
   }
 
-  function handleClick(tag, disablemenu) {}
-
-  //For each blog post, feed create unique tags function all of the posts tags
   //Then return a unique array from all of the tags
   props.blogposts.map(edge => {
     let list = edge.node.tags
@@ -32,17 +27,24 @@ const TagsList = props => {
   })
 
   return (
-    <div className="tagslist">
-      <ul className="taglist-scrollbox">
-        {uniqueTags.map(tag => (
-          <li key={tag}>
-            <Link onClick={props.disablemenu} to={`/${tag}`}>
-              #{tag}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <TagContext.Consumer>
+      {tagcontext => (
+        <div className="tagslist">
+          <ul className="taglist-scrollbox">
+            {uniqueTags.map(tag => (
+              <li key={tag}>
+                <Link
+                  onClick={() => tagcontext.setActiveTag(tag)}
+                  to={`/${tag}`}
+                >
+                  #{tag}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </TagContext.Consumer>
   )
 }
 

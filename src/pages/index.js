@@ -3,6 +3,7 @@ import BlogPostsList from '../components/global/blogPostsList'
 import TagsList from '../components/global/tagsList'
 import EmailSignupForm from '../components/global/emailSignupForm'
 import HomepageWidgetBox from '../components/global/homepageWidgetBox'
+import Header from '../components/global/header'
 import '../assets/styles/main.scss'
 const IndexPage = ({ data }) => {
   let allBlogPosts = data.allContentfulBlog.edges
@@ -10,7 +11,8 @@ const IndexPage = ({ data }) => {
   let featuredPost = allBlogPosts[0]
 
   return (
-    <div>
+    <div className="global-container">
+      <Header blogposts={data.allContentfulBlog.edges} />
       <div className="home-container">
         <div>
           <HomepageWidgetBox title={'Categories'}>

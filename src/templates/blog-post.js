@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import AuthorCard from '../components/postpage/authorCard'
 import CommentsSection from '../components/postpage/commentsSection'
 import PostContent from '../components/postpage/postContent'
+import Header from '../components/global/header'
 
 class BlogPost extends Component {
   render() {
@@ -14,23 +15,27 @@ class BlogPost extends Component {
       quickSummary,
       publishDate,
     } = this.props.data.contentfulBlog
-
+    console.log(this.props)
     return (
-      <div className="blog-post-container">
-        <AuthorCard
-          description={author.description.childMarkdownRemark.html}
-          name={author.name}
-        />
-        <PostContent
-          content={post.childMarkdownRemark.html}
-          date={publishDate}
-          summary={quickSummary}
-          title={title}
-          twitter={author.twitterLink}
-          wordcount={post.childMarkdownRemark.wordCount.words}
-        />
+      <div className="global-container">
+        <Header isBlogPage={true} />
+        <div className="blog-post-container">
+          <AuthorCard
+            avatar={author.avatar.resolutions.src}
+            description={author.description.childMarkdownRemark.html}
+            name={author.name}
+          />
+          <PostContent
+            content={post.childMarkdownRemark.html}
+            date={publishDate}
+            summary={quickSummary}
+            title={title}
+            twitter={author.twitterLink}
+            wordcount={post.childMarkdownRemark.wordCount.words}
+          />
 
-        <CommentsSection id={title} title={title} />
+          <CommentsSection id={title} title={title} />
+        </div>
       </div>
     )
   }
@@ -46,6 +51,12 @@ export const pageQuery = graphql`
   query blogPostQuery($slug: String!) {
     contentfulBlog(slug: { eq: $slug }) {
       author {
+        avatar {
+          resolutions {
+            src
+          }
+        }
+
         name
         twitterLink
         description {
