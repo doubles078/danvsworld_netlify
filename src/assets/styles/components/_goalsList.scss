@@ -1,0 +1,25 @@
+.GoalsList {
+  padding: 0;
+
+  &__list {
+    padding: 0;
+    margin: 0;
+
+    li:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__list-item {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    list-style: none;
+    margin: 0;
+
+    &:hover {
+      background: #f9f9fa;
+    }
+  }
+}

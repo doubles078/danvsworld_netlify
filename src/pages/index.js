@@ -2,6 +2,7 @@ import React from 'react'
 import BlogPostsList from '../components/global/blogPostsList'
 import TagsList from '../components/global/tagsList'
 import EmailSignupForm from '../components/global/emailSignupForm'
+import GoalsList from '../components/global/goalsList'
 import HomepageWidgetBox from '../components/global/homepageWidgetBox'
 import Header from '../components/global/header'
 import '../assets/styles/main.scss'
@@ -18,6 +19,9 @@ const IndexPage = ({ data }) => {
           <HomepageWidgetBox title={'Categories'}>
             <TagsList blogposts={allBlogPosts} />
           </HomepageWidgetBox>
+          <HomepageWidgetBox title={'2019 Goals'}>
+            <GoalsList />
+          </HomepageWidgetBox>
         </div>
 
         <main>
@@ -28,7 +32,21 @@ const IndexPage = ({ data }) => {
         </main>
 
         <div>
-          <HomepageWidgetBox title={'Follow Me'}>
+          <HomepageWidgetBox title={'Welcome'}>
+            <div style={{ padding: '0.5rem' }}>
+              Hello, this is my (
+              <a
+                href="https://www.linkedin.com/in/donohued/"
+                rel="noopener noreferrer"
+                target="_blank"
+                style={{ padding: 0 }}
+              >
+                Dan Donohue's
+              </a>
+              ) blog for goals, reflections, and tech stuff.
+            </div>
+          </HomepageWidgetBox>
+          <HomepageWidgetBox title={'Email Signup'}>
             <EmailSignupForm />
           </HomepageWidgetBox>
         </div>
