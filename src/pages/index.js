@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
         </main>
 
         <div>
-          <HomepageWidgetBox title={'Email Signup'}>
+          <HomepageWidgetBox title={'Follow Me'}>
             <EmailSignupForm />
           </HomepageWidgetBox>
         </div>
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
             twitterLink
           }
           featuredImage {
-            sizes(quality: 100) {
+            resize(width: 600) {
               src
             }
           }

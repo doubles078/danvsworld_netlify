@@ -7,8 +7,20 @@ const BlogPostCard = ({ node }) => {
     return tag.toLowerCase().replace(/\s/g, '')
   }
 
+  function displayPostImage(node) {
+    if (node.featuredImage.resize.src) {
+      return (
+        <img
+          className="post-list-featured-image"
+          src={node.featuredImage.resize.src}
+        />
+      )
+    }
+  }
+
   return (
     <li className="post-list-card">
+      {displayPostImage(node)}
       <div className="post-list-card-details">
         <div className="post-list-card-meta">
           <h2>

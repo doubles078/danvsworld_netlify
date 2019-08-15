@@ -11,7 +11,7 @@ const FeaturedPostCard = ({ node }) => {
     <li className="post-list-card">
       <img
         className="post-list-featured-image"
-        src={node.featuredImage.sizes.src}
+        src={node.featuredImage.resize.src}
       />
 
       <div className="post-list-card-details">

@@ -27,6 +27,8 @@ class HomepageTag extends Component {
 
     listOfPosts.map(edge => {
       edge.node.tags.map(tag => {
+        console.log('i am tag: ', tag)
+        console.log('i am page: ', pageTag)
         if (tag === pageTag) {
           filteredListOfPosts.push(edge)
         }
@@ -51,10 +53,6 @@ class HomepageTag extends Component {
                       blogposts={this.props.data.allContentfulBlog.edges}
                     />
                   </HomepageWidgetBox>
-
-                  <HomepageWidgetBox title={'Email Signup'}>
-                    <EmailSignupForm />
-                  </HomepageWidgetBox>
                 </div>
 
                 <main>
@@ -67,6 +65,11 @@ class HomepageTag extends Component {
                     ))}
                   </ul>
                 </main>
+                <div>
+                  <HomepageWidgetBox title={'Email Signup'}>
+                    <EmailSignupForm />
+                  </HomepageWidgetBox>
+                </div>
               </div>
             </div>
           </div>
@@ -97,7 +100,7 @@ export const pageQuery = graphql`
             twitterLink
           }
           featuredImage {
-            resolutions {
+            resize(width: 600) {
               src
             }
           }
