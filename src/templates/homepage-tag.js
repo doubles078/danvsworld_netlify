@@ -27,8 +27,6 @@ class HomepageTag extends Component {
 
     listOfPosts.map(edge => {
       edge.node.tags.map(tag => {
-        console.log('i am tag: ', tag)
-        console.log('i am page: ', pageTag)
         if (tag === pageTag) {
           filteredListOfPosts.push(edge)
         }
