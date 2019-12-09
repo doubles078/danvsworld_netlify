@@ -1,60 +1,61 @@
 .blog-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin-left: 0;
+  padding: 0 1rem;
+
+  li {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: $cards-border-radius;
+    box-shadow: 0 0 6px #eee;
+    box-sizing: border-box;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    margin-left: 0;
-    padding: 0 1rem;
+    vertical-align: top;
+    width: 100%;
 
-    li {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: $cards-border-radius;
-        box-shadow: 0 0 6px #eee;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 30rem;
-        vertical-align: top;
-        width: 100%;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
 
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0;
-
-            li {
-                border: none;
-                border-radius: 0;
-                box-shadow: none;
-                margin: 0 0.5rem 0 0;
-                padding: 0rem;
-                width: auto;
-            }
-        }
+      li {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0 0.5rem 0 0;
+        padding: 0rem;
+        width: auto;
+      }
     }
-}    
-
-//** MEDIA QUERIES **//
-@media (max-width: 900px) {
-    .blog-posts {     
-        li {
-            h1 {
-                font-size: 1.5rem;
-                line-height: 1.8rem;
-            } 
-        }
-    }
+  }
 }
 
-@media (max-width: 420px) {
-    .blog-posts {     
-        li {
-            h1 {
-                font-size: 1rem;
-                line-height: 1rem;
-            } 
-        }
+//** MEDIA QUERIES **//
+@media (max-width: $breakpoint-m) {
+  .blog-posts {
+    padding: 0;
+    li {
+      h1 {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+      }
     }
+  }
+}
+
+@media (max-width: $breakpoint-s) {
+  .blog-posts {
+    padding: 0;
+    li {
+      h1 {
+        font-size: 1rem;
+        line-height: 1rem;
+      }
+    }
+  }
 }

@@ -15,15 +15,6 @@ const IndexPage = ({ data }) => {
     <div className="global-container">
       <Header blogposts={data.allContentfulBlog.edges} />
       <div className="home-container">
-        <div>
-          <HomepageWidgetBox title={'Categories'}>
-            <TagsList blogposts={allBlogPosts} />
-          </HomepageWidgetBox>
-          <HomepageWidgetBox title={'2019 Goals'}>
-            <GoalsList />
-          </HomepageWidgetBox>
-        </div>
-
         <main>
           <BlogPostsList
             featuredpost={featuredPost.node}
@@ -46,8 +37,11 @@ const IndexPage = ({ data }) => {
               ) blog for goals, reflections, and tech stuff.
             </div>
           </HomepageWidgetBox>
-          <HomepageWidgetBox title={'Email Signup'}>
-            <EmailSignupForm />
+          <HomepageWidgetBox title={'Categories'}>
+            <TagsList blogposts={allBlogPosts} />
+          </HomepageWidgetBox>
+          <HomepageWidgetBox title={'2019 Goals'}>
+            <GoalsList />
           </HomepageWidgetBox>
         </div>
       </div>

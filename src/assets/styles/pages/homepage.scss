@@ -4,20 +4,20 @@
 @import '../components/_featuredTagHeader';
 
 .home-container {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    margin: 0 auto;
-    max-width: 66em;
-    min-height: 100vh;
-    padding: 0px 1.0875rem 1.45rem;
-    padding-top: 0;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  margin: 0 auto;
+  max-width: 66em;
+  min-height: 100vh;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
 }
 
 //** MEDIA QUERIES **//
-@media (max-width: 900px) {
-    .home-container {
-        display: flex;
-        flex-direction: column;
-    }
+@media (max-width: $breakpoint-m) {
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -1,28 +1,40 @@
 .header {
-    background: $primary-color;
-    margin-bottom: 1.45rem;
+  background: $primary-color;
+  margin-bottom: 1.45rem;
+  border-top: 3px $secondary-color solid;
 
-    .wrapper {
-        align-items: center;
-        display: flex;
-        margin: 0 auto;
-        max-width: 66rem;
-        padding: 1.45rem 1.0875rem;
+  .wrapper {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 66rem;
+    padding: 0.5rem;
 
-        h1 {
-            align-items: center;
-            display: flex;
-            margin: 0;
+    h1 {
+      align-items: center;
+      display: flex;
+      margin: auto;
 
-            a {
-                color: $white;
-                text-decoration: none;
-            }
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: 2rem;
+      }
 
-            svg {
-                fill: $white;
-                margin-left: 15px;
-            }
-        }
+      svg {
+        fill: $white;
+        margin-left: 15px;
+      }
     }
+  }
+}
+
+@media (max-width: $breakpoint-s) {
+  .header {
+    .wrapper {
+      h1 {
+        margin: 0;
+      }
+    }
+  }
 }
