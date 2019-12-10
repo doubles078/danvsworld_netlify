@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const AuthorCard = props => (
   <figure className="author">
     <div className="img-wrapper">
-      <img src={props.avatar} />
+      <img src={props.avatar} alt="avatar of author" />
     </div>
 
     <figcaption>

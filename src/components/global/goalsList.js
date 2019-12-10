@@ -17,6 +17,7 @@ const GoalsList = () => {
           Can play the entire{' '}
           <a
             href="https://open.spotify.com/album/7yu7B1B8O07jAFAZEFSRXA"
+            rel="noopener noreferrer"
             target="_blank"
           >
             Artist in the Ambulance

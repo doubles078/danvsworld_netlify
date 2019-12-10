@@ -1,21 +1,21 @@
-require('dotenv').config();
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: 'Robomo: A Blog About Technical Marketing and Automation',
+    title: 'DanVsWorld: A blog by Dan Donohue',
   },
   plugins: [
-    { 
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACEID || '',
-        accessToken: process.env.CONTENTFUL_ACCESSTOKEN || ''
-      }
-     },
-     {
+        accessToken: process.env.CONTENTFUL_ACCESSTOKEN || '',
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-37084048-6",
+        trackingId: 'UA-37084048-6',
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
@@ -26,6 +26,12 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
-    'gatsby-plugin-sass'
-    ],
+    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: './src/assets/images/favicon.png',
+      },
+    },
+  ],
 }

@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react'
+import React, { Component } from 'react'
 import BlogPostCard from '../components/global/blogPostCard'
 import FeaturedTagHeader from '../components/global/featuredTagHeader'
 import TagsList from '../components/global/tagsList'
