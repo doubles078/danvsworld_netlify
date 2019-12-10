@@ -8,12 +8,10 @@ const FeaturedPostCard = ({ node }) => {
   }
 
   return (
-    <li className="post-list-card">
-      <img
-        className="post-list-featured-image"
-        src={node.featuredImage.resize.src}
-      />
-
+    <li
+      className="post-list-card post-list-card-featured"
+      style={{ backgroundImage: `url(${node.featuredImage.resize.src})` }}
+    >
       <div className="post-list-card-details">
         <div className="post-list-card-meta">
           <h2>

@@ -8,7 +8,7 @@ const PostContent = props => (
       <p>{props.date}</p>
 
       <a href={props.twitter} target="_blank" rel="noopener noreferrer">
-        Ask the author a question
+        Say hi
       </a>
     </div>
 

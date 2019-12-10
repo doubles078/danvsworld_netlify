@@ -1,11 +1,17 @@
 @import '../components/_header';
 @import '../components/_slideMenu';
 @import '../components/_homepageWidgetBox';
-@import '../components/_emailSignupForm';
 @import '../components/_tagsList';
 @import '../components//goalsList';
 
 //Gatbsy overrides
 img {
   margin: 0;
+}
+
+ol,
+ul {
+  li {
+    display: block;
+  }
 }

@@ -7,17 +7,6 @@
   padding: 0 1rem;
 
   li {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: $cards-border-radius;
-    box-shadow: 0 0 6px #eee;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    vertical-align: top;
-    width: 100%;
-
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -30,6 +19,7 @@
         margin: 0 0.5rem 0 0;
         padding: 0rem;
         width: auto;
+        list-style: none;
       }
     }
   }

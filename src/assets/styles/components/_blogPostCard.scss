@@ -1,61 +1,93 @@
-.post-list-card-details {
+.post-list-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: $cards-border-radius;
+  box-shadow: 0 0 6px #eee;
+  box-sizing: border-box;
   display: flex;
-  padding: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  vertical-align: top;
+  width: 100%;
 
-  .post-list-avatar {
-    border-radius: 30px;
-    height: 50px;
-    margin: 0;
-    width: 50px;
-  }
-
-  .post-list-card-meta {
-    margin-left: 1rem;
-    &-image {
-      background-size: cover;
-      width: 300px;
-      min-width: 175px;
-    }
-    a {
-      text-decoration: none;
-    }
-
-    h2 {
-      font-family: Source Sans Pro, sans-serif;
-      font-size: 1.8rem;
-      font-weight: 500;
-      line-height: 1.2;
-      margin: 0;
-      text-align: left !important;
-
-      a {
-        color: $main-font;
+  &-featured {
+    align-items: flex-end;
+    background-size: cover;
+    min-height: 300px;
+    color: $white;
+    .post-list-card-details {
+      background: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      .post-list-card-meta {
+        h2 {
+          a {
+            color: $white;
+          }
+        }
       }
     }
   }
-}
 
-@media (max-width: $breakpoint-m) {
-  .post-list-card-details {
+  &-details {
+    display: flex;
+    padding: 1rem;
+
     .post-list-card-meta {
+      margin-left: 1rem;
+      &-image {
+        background-size: cover;
+        max-width: 200px;
+        min-width: 175px;
+        min-height: 125px;
+      }
+      a {
+        text-decoration: none;
+      }
+
       h2 {
-        font-size: 1.75rem;
-        line-height: 1.25;
+        font-family: Source Sans Pro, sans-serif;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0;
+        text-align: left !important;
+
+        a {
+          color: $main-font;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-m) {
+    .post-list-card {
+      &-details {
+        .post-list-card-meta {
+          h2 {
+            font-size: 1.75rem;
+            line-height: 1.25;
+          }
+        }
       }
     }
   }
 }
 
 @media (max-width: $breakpoint-s) {
-  .post-list-card-details {
-    .post-list-card-meta {
-      font-size: 0.9em;
-      &-image {
-        display: none;
-      }
-      h2 {
-        font-size: 1.25rem;
-        line-height: 1.25;
+  .post-list-card {
+    &-details {
+      .post-list-card-meta {
+        font-size: 0.9em;
+        &-image {
+          display: none;
+        }
+        h2 {
+          font-size: 1.25rem;
+          line-height: 1.25;
+        }
       }
     }
   }

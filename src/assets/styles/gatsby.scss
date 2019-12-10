@@ -46,7 +46,7 @@ a {
   &:active {
     color: $link-color;
     border-bottom: dotted 5px $link-color;
-    padding: 5px 0px;
+    padding: 0px;
   }
 }
 abbr[title] {
