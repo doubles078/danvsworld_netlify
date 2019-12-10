@@ -1,7 +1,6 @@
 import React from 'react'
 import BlogPostsList from '../components/global/blogPostsList'
 import TagsList from '../components/global/tagsList'
-import EmailSignupForm from '../components/global/emailSignupForm'
 import GoalsList from '../components/global/goalsList'
 import HomepageWidgetBox from '../components/global/homepageWidgetBox'
 import Header from '../components/global/header'
@@ -15,15 +14,6 @@ const IndexPage = ({ data }) => {
     <div className="global-container">
       <Header blogposts={data.allContentfulBlog.edges} />
       <div className="home-container">
-        <div>
-          <HomepageWidgetBox title={'Categories'}>
-            <TagsList blogposts={allBlogPosts} />
-          </HomepageWidgetBox>
-          <HomepageWidgetBox title={'2019 Goals'}>
-            <GoalsList />
-          </HomepageWidgetBox>
-        </div>
-
         <main>
           <BlogPostsList
             featuredpost={featuredPost.node}
@@ -32,22 +22,25 @@ const IndexPage = ({ data }) => {
         </main>
 
         <div>
-          <HomepageWidgetBox title={'Welcome'}>
+          <HomepageWidgetBox title={'Hello'}>
             <div style={{ padding: '0.5rem' }}>
-              Hello, this is my (
+              and welcome to{' '}
               <a
                 href="https://www.linkedin.com/in/donohued/"
                 rel="noopener noreferrer"
                 target="_blank"
                 style={{ padding: 0 }}
               >
-                Dan Donohue's
-              </a>
-              ) blog for goals, reflections, and tech stuff.
+                my
+              </a>{' '}
+              blog for goals, reflections, and tech stuff.
             </div>
           </HomepageWidgetBox>
-          <HomepageWidgetBox title={'Email Signup'}>
-            <EmailSignupForm />
+          <HomepageWidgetBox title={'Categories'}>
+            <TagsList blogposts={allBlogPosts} />
+          </HomepageWidgetBox>
+          <HomepageWidgetBox title={'2020 Goals'}>
+            <GoalsList />
           </HomepageWidgetBox>
         </div>
       </div>

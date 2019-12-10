@@ -41,13 +41,12 @@ template {
 a {
   color: $link-color;
   font-family: sans-serif;
-  padding: 10px 5px;
 
   &:focus,
   &:active {
     color: $link-color;
-    border: dotted 5px $link-color;
-    padding: 5px 0px;
+    border-bottom: dotted 5px $link-color;
+    padding: 0px;
   }
 }
 abbr[title] {
