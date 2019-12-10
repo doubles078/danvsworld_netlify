@@ -5,26 +5,33 @@ const GoalsList = () => {
     <div className="GoalsList">
       <ul className="GoalsList__list" style={{}}>
         <li className="GoalsList__list-item">
-          Build and launch a full stack tech project
+          50+ users on a personal tech project
         </li>
         <li className="GoalsList__list-item">
-          Learn basic reading & writing in Chinese
+          Read a children's book in Chinese
         </li>
         <li className="GoalsList__list-item">
-          Earn my purple belt in Brazilian jiu jitsu
+          Purple belt in Brazilian Jiu Jitsu
         </li>
         <li className="GoalsList__list-item">
-          Complete my first triathlon and half marathon
+          Can play the entire{' '}
+          <a
+            href="https://open.spotify.com/album/7yu7B1B8O07jAFAZEFSRXA"
+            target="_blank"
+          >
+            Artist in the Ambulance
+          </a>{' '}
+          album on guitar
         </li>
         <li className="GoalsList__list-item">
-          Read 20 books -{' '}
+          Finish my 'to-read' list on{' '}
           <a
             href="https://www.goodreads.com/user/show/37996530-daniel-donohue"
             rel="noopener noreferrer"
             target="_blank"
             style={{ padding: 0 }}
           >
-            my goodreads
+            goodreads
           </a>
         </li>
       </ul>

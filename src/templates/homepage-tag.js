@@ -2,7 +2,6 @@ import React, { Component, useContext } from 'react'
 import BlogPostCard from '../components/global/blogPostCard'
 import FeaturedTagHeader from '../components/global/featuredTagHeader'
 import TagsList from '../components/global/tagsList'
-import EmailSignupForm from '../components/global/emailSignupForm'
 import HomepageWidgetBox from '../components/global/homepageWidgetBox'
 import TagContext from '../components/context/TagContext'
 import Header from '../components/global/header'
@@ -45,14 +44,6 @@ class HomepageTag extends Component {
               <div className="home-container">
                 <FeaturedTagHeader tag={this.state.pageTag} />
 
-                <div>
-                  <HomepageWidgetBox title={'Categories'}>
-                    <TagsList
-                      blogposts={this.props.data.allContentfulBlog.edges}
-                    />
-                  </HomepageWidgetBox>
-                </div>
-
                 <main>
                   <ul className="blog-posts">
                     {this.generatePageTagContext(
@@ -64,8 +55,10 @@ class HomepageTag extends Component {
                   </ul>
                 </main>
                 <div>
-                  <HomepageWidgetBox title={'Email Signup'}>
-                    <EmailSignupForm />
+                  <HomepageWidgetBox title={'Categories'}>
+                    <TagsList
+                      blogposts={this.props.data.allContentfulBlog.edges}
+                    />
                   </HomepageWidgetBox>
                 </div>
               </div>

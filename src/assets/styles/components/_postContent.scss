@@ -1,33 +1,31 @@
 .content {
-    .date {
-        display: flex;
-        margin-bottom: 2rem;
-        
-        a {
-            font-size: 1rem; 
-        }
+  .date {
+    display: flex;
+    margin-bottom: 2rem;
 
-        p {
-            font-family: sans-serif;
-            font-size: 1rem;
-            margin-bottom: 0px;
-            padding: 10px 0px 0px 0px;
-
-            &:after {
-                content: "•";
-                font-size: .8em;
-                color: $primary-color;
-                display: inline-block;
-                margin: 0 .4em 0 .4em;
-            }
-        }
+    a {
+      font-size: 1rem;
     }
+
+    p {
+      font-family: sans-serif;
+      font-size: 1rem;
+      margin-bottom: 0px;
+
+      &:after {
+        content: '•';
+        font-size: 0.8em;
+        color: $primary-color;
+        display: inline-block;
+        margin: 0 0.4em 0 0.4em;
+      }
+    }
+  }
 }
 
 //** MEDIA QUERIES **//
-@media (max-width: 420px) {
-    .date {
-        flex-direction: column;
-    }
+@media (max-width: $breakpoint-s) {
+  .date {
+    flex-direction: column;
+  }
 }
-  

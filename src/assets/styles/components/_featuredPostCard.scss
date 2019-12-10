@@ -1,52 +1,49 @@
 .featured-post-list-card-details {
-    display: flex;
-    padding: 1rem;
+  display: flex;
+  padding: 1rem;
 
-    .featured-post-list-avatar {
-        border-radius: 30px;
-        height: 50px;
-        margin: 0;
-        width: 50px;
+  .featured-post-list-avatar {
+    border-radius: 30px;
+    height: 50px;
+    margin: 0;
+    width: 50px;
+  }
+
+  .featured-post-list-card-meta {
+    margin-left: 1rem;
+
+    a {
+      text-decoration: none;
     }
-    
-    .featured-post-list-card-meta {
-        margin-left: 1rem;
 
-        a {
-            text-decoration: none;
-        }
+    h2 {
+      font-family: Source Sans Pro, sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 2.5rem;
+      margin: 0;
+      text-align: left !important;
 
-        h2 {
-            font-family: Source Sans Pro, sans-serif;
-            font-size: 2rem;
-            font-weight: 500;
-            line-height: 2.5rem;
-            margin: 0;
-            text-align: left !important;
-
-            a {
-                color: $main-font;
-            }
-        }
+      a {
+        color: $main-font;
+      }
     }
+  }
 }
-
 
 .featured-post-list-featured-image {
-    flex: 0 1 100%;
-    margin-bottom: 0px;
-    max-height: 300px;
+  flex: 0 1 100%;
+  margin-bottom: 0px;
+  max-height: 300px;
 }
 
+@media (max-width: $breakpoint-s) {
+  .featured-post-list-card-meta {
+    font-size: 0.9em;
+  }
 
-@media (max-width: 420px) {
-    .featured-post-list-card-meta {
-        font-size: 0.9em;
-    }
-
-    .featured-post-list-featured-image {
-        display: none;
-        max-height: 170px;
-    }
+  .featured-post-list-featured-image {
+    display: none;
+    max-height: 170px;
+  }
 }
-        

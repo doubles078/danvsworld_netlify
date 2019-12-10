@@ -10,9 +10,11 @@ const BlogPostCard = ({ node }) => {
   function displayPostImage(node) {
     if (node.featuredImage.resize.src) {
       return (
-        <img
-          className="post-list-featured-image"
-          src={node.featuredImage.resize.src}
+        <div
+          className="post-list-card-meta-image"
+          style={{
+            backgroundImage: `url(${node.featuredImage.resize.src})`,
+          }}
         />
       )
     }
@@ -20,8 +22,8 @@ const BlogPostCard = ({ node }) => {
 
   return (
     <li className="post-list-card">
-      {displayPostImage(node)}
       <div className="post-list-card-details">
+        {displayPostImage(node)}
         <div className="post-list-card-meta">
           <h2>
             <Link to={`/${node.slug}`}>{node.title}</Link>
