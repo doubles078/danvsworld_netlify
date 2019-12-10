@@ -15,7 +15,6 @@ class BlogPost extends Component {
       quickSummary,
       publishDate,
     } = this.props.data.contentfulBlog
-    console.log(this.props)
     return (
       <div className="global-container">
         <Header isBlogPage={true} />
