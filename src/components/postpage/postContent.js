@@ -4,14 +4,6 @@ import PostMeta from './postMeta'
 
 const PostContent = props => (
   <main className="content">
-    <div className="date">
-      <p>{props.date}</p>
-
-      <a href={props.twitter} target="_blank" rel="noopener noreferrer">
-        Say hi
-      </a>
-    </div>
-
     <h1>{props.title}</h1>
 
     <PostMeta summary={props.summary} wordcount={props.wordcount} />
