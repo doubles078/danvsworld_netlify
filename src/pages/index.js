@@ -22,18 +22,18 @@ const IndexPage = ({ data }) => {
         </main>
 
         <div>
-          <HomepageWidgetBox title={'Hello'}>
+          <HomepageWidgetBox title={'Hello!'}>
             <div style={{ padding: '0.5rem' }}>
-              and welcome to{' '}
+              Welcome to my site. I am{' '}
               <a
                 href="https://www.linkedin.com/in/donohued/"
                 rel="noopener noreferrer"
                 target="_blank"
                 style={{ padding: 0 }}
               >
-                my
-              </a>{' '}
-              blog for goals, reflections, and tech stuff.
+                Dan Donohue
+              </a>
+              , a Boston-based software developer at EF Education First.
             </div>
           </HomepageWidgetBox>
           <HomepageWidgetBox title={'Categories'}>
