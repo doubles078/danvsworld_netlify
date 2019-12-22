@@ -8,7 +8,11 @@ const Header = props => (
   <header className="header">
     <Helmet>
       <meta charSet="utf-8" />
-      <title>danvsworld 🌎</title>
+      <meta
+        name="description"
+        content="DanVsWorld is the personal website and blog of Dan Donohue.  Posts about fitness, software development, and other assorted projects."
+      />
+      <title>danvsworld</title>
     </Helmet>
     <div className="wrapper">
       <h1>
