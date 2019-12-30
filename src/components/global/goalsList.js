@@ -7,12 +7,8 @@ const GoalsList = () => {
         <li className="GoalsList__list-item">
           50+ users on a personal tech project
         </li>
-        <li className="GoalsList__list-item">
-          Read a children's book in Chinese
-        </li>
-        <li className="GoalsList__list-item">
-          Purple belt in Brazilian Jiu Jitsu
-        </li>
+        <li className="GoalsList__list-item">Write a letter in Chinese</li>
+        <li className="GoalsList__list-item">Compete in Brazilian Jiu-Jitsu</li>
         <li className="GoalsList__list-item">
           Can play the entire{' '}
           <a
