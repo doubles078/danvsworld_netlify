@@ -22,7 +22,12 @@ const IndexPage = ({ data }) => {
         </main>
 
         <div>
-          <HomepageWidgetBox title={'Hello!'}>
+          <HomepageWidgetBox
+            title={'Hello!'}
+            img={
+              'https://pbs.twimg.com/profile_images/1207348167164989443/WXEErrNJ_400x400.jpg'
+            }
+          >
             <div style={{ padding: '0.5rem' }}>
               Welcome to my site. I am{' '}
               <a
